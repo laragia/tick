@@ -1,14 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { CustomMaterialModule } from './customMaterial.module'
 import { AppComponent } from './app.component';
+import { TickComponent } from './tick/tick.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TickComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    CustomMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
