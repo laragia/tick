@@ -12,4 +12,9 @@ export class TickComponent implements OnInit {
   ngOnInit() {
   }
 
+  irgendwas() {
+    alert("new tick")
+    // console.log("Alert");
+  }
+
 }
