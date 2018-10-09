@@ -1,8 +1,8 @@
-import {MatButtonModule, MatCheckboxModule, MatSlideToggleModule, MatFormFieldModule, MatDatepickerModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule, MatSlideToggleModule, MatFormFieldModule, MatNativeDateModule} from '@angular/material';
 import {NgModule} from '@angular/core';
 
 @NgModule({
-  imports: [MatButtonModule, MatCheckboxModule, MatSlideToggleModule, MatFormFieldModule, MatDatepickerModule],
-  exports: [MatButtonModule, MatCheckboxModule, MatSlideToggleModule, MatFormFieldModule, MatDatepickerModule],
+  imports: [MatButtonModule, MatCheckboxModule, MatSlideToggleModule, MatFormFieldModule, MatNativeDateModule],
+  exports: [MatButtonModule, MatCheckboxModule, MatSlideToggleModule, MatFormFieldModule, MatNativeDateModule],
 })
 export class CustomMaterialModule { }
