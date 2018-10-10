@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material'
+import { TickDialogComponent } from './tick-dialog/tick-dialog.component'
 
 @Component({
   selector: 'app-tick',
@@ -7,13 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TickComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dialog: MatDialog) {
+  }
 
   ngOnInit() {
   }
 
   newTick() {
-    alert('new tick')
-    }
+    const dialogConfig = new MatDialogConfig();
 
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+
+    const dialogRef = this.dialog.open(TickDialogComponent, dialogConfig);
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('dialog was closed' + result);
+    });
+  }
 }
