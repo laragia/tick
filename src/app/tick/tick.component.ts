@@ -25,6 +25,5 @@ export class TickComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log('dialog was closed' + result);
     });
-
   }
 }

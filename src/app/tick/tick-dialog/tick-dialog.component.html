@@ -2,15 +2,21 @@
   <mat-form-field>
     <input matInput placeholder="Ort">
   </mat-form-field>
+  <!--Inout Feld um zu speichern an welchem Ort man gebisen wurde-->
 
   <mat-form-field>
     <input matInput [matDatepicker]="picker" placeholder="Choose a date">
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
+    <!--wann wurde man gebissen? mit Datepicker-->
   </mat-form-field>
 
 </div>
 
 <mat-slide-toggle>Erinnerung</mat-slide-toggle>
+<!--Will man eine Erinnerung-->
 
+<button mat-raised-button (click)="close()">schliessen</button>
+<!--um Dialog zu schliessen-->
 <button mat-raised-button (click)="save()">sichern</button>
+<!--um eingegebene Daten zu sichern-->

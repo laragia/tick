@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material'
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material'
 
 
 
@@ -14,8 +14,10 @@ export class TickDialogComponent {
     public dialogRef: MatDialogRef<TickDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) { }
 
-  save() {
+  close() {
     this.dialogRef.close();
   }
-
+/*  save() {
+    this.dialogRef.close(this.form.value);
+  }*/
 }
