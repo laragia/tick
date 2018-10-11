@@ -1,5 +1,6 @@
 import { Component, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material'
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material'
+
 
 
 @Component({
@@ -9,5 +10,12 @@ import { MAT_DIALOG_DATA } from '@angular/material'
 })
 export class TickDialogComponent {
 
-  constructor(  @Inject(MAT_DIALOG_DATA) public data: any) { }
+  constructor(
+    public dialogRef: MatDialogRef<TickDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any) { }
+
+  save() {
+    this.dialogRef.close();
+  }
+
 }

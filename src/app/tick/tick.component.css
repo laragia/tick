@@ -6,3 +6,13 @@
 .example-container > * {
   width: 25%;
 }
+
+p {
+  font-family: sans-serif;
+  font-size: 28px;
+}
+
+button{
+  font-family: sans-serif;
+  background-color: #bcd6ff;
+}
