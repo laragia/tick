@@ -3,3 +3,7 @@
 </p>
 
 <button mat-raised-button (click)="newTick()">neue Zecke eintragen</button>
+
+<mat-list *ngFor="let tick of ticks">
+        {{ tick.place }}, {{ tick.date }},  {{ tick.reminder }},  {{ tick.bodyLocation }}
+</mat-list>
