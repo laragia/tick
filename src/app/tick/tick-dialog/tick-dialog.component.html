@@ -1,11 +1,11 @@
 <div class="example-container">
   <mat-form-field>
-    <input matInput placeholder="Ort">
+    <input matInput class="place" placeholder="Ort" [(ngModel)]="data.place">
   </mat-form-field>
   <!--Inout Feld um zu speichern an welchem Ort man gebisen wurde-->
 
   <mat-form-field>
-    <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+    <input matInput class="date" [matDatepicker]="picker" placeholder="Choose a date">
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
     <!--wann wurde man gebissen? mit Datepicker-->
