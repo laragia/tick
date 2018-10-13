@@ -16,6 +16,9 @@ export class TickComponent implements OnInit {
   ngOnInit() {
     // TODO read local storage
     this.ticks = JSON.parse(localStorage.getItem('ticks'));
+    if (this.ticks == null) {
+      this.ticks = [];
+    }
 
   }
 
@@ -34,8 +37,9 @@ export class TickComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if (result !== undefined) {
         console.log('tick: ' + JSON.stringify(result));
-        // TODO save in local storage
+        this.ticks.push(result);
         localStorage.setItem("ticks", JSON.stringify(this.ticks));
+
       } else {
         console.log('CLOSE');
       }
