@@ -32,16 +32,12 @@ export class TickComponent implements OnInit {
 
     const dialogRef = this.matDialog.open(TickDialogComponent, dialogConfig);
     dialogRef.afterClosed().subscribe(result => {
-      console.log('dialog was closed' + result);
       if (result !== undefined) {
-        let data = this.data;
-        let t = { place: 'Kerns', date: new Date(), reminder: true, bodyLocation: 'head' };
-        let t2 = {};
-        t2.place = 'shgfhjsgfj';
-        this.ticks.push(t);
-        this.ticks.push(t2);
+        console.log('tick: ' + JSON.stringify(result));
         // TODO save in local storage
         localStorage.setItem("ticks", JSON.stringify(this.ticks));
+      } else {
+        console.log('CLOSE');
       }
     });
   }
