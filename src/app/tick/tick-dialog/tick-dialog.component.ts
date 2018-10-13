@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material'
-
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material'
+import { Tick } from '../tick.model'
 
 @Component({
   selector: 'app-tick-dialog',
@@ -8,6 +8,19 @@ import { MAT_DIALOG_DATA } from '@angular/material'
   styleUrls: ['./tick-dialog.component.css']
 })
 export class TickDialogComponent {
+  tick: Tick = {place:'', date: new Date(), reminder: false, bodyLocation: ''};
 
-  constructor(  @Inject(MAT_DIALOG_DATA) public data: any) { }
+  constructor(
+    private dialogRef: MatDialogRef<TickDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any) {
+  }
+
+  close() {
+    this.dialogRef.close();
+  }
+
+  save() {
+    //this.tick.place = this.place;
+    this.dialogRef.close(this.tick);
+  }
 }

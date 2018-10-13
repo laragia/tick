@@ -1,6 +1,7 @@
 import { Component, OnInit, } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material'
 import { TickDialogComponent } from './tick-dialog/tick-dialog.component'
+import { Tick } from './tick.model'
 
 @Component({
   selector: 'app-tick',
@@ -8,11 +9,17 @@ import { TickDialogComponent } from './tick-dialog/tick-dialog.component'
   styleUrls: ['./tick.component.css']
 })
 export class TickComponent implements OnInit {
-
-  constructor(private dialog: MatDialog) {
+  private ticks: Tick[] = [];
+  constructor(private matDialog: MatDialog) {
   }
 
   ngOnInit() {
+    // TODO read local storage
+    this.ticks = JSON.parse(localStorage.getItem('ticks'));
+    if (this.ticks == null) {
+      this.ticks = [];
+    }
+
   }
 
   newTick() {
@@ -21,9 +28,21 @@ export class TickComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
 
-    const dialogRef = this.dialog.open(TickDialogComponent, dialogConfig);
+    dialogConfig.data = {
+      id: 1,
+      place: 'example'
+    };
+
+    const dialogRef = this.matDialog.open(TickDialogComponent, dialogConfig);
     dialogRef.afterClosed().subscribe(result => {
-      console.log('dialog was closed' + result);
+      if (result !== undefined) {
+        console.log('tick: ' + JSON.stringify(result));
+        this.ticks.push(result);
+        localStorage.setItem("ticks", JSON.stringify(this.ticks));
+
+      } else {
+        console.log('CLOSE');
+      }
     });
   }
 }

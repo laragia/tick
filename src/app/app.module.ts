@@ -4,6 +4,8 @@ import { CustomMaterialModule } from './customMaterial.module'
 import { AppComponent } from './app.component';
 import { TickComponent } from './tick/tick.component';
 import { TickDialogComponent } from './tick/tick-dialog/tick-dialog.component';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -13,7 +15,8 @@ import { TickDialogComponent } from './tick/tick-dialog/tick-dialog.component';
   ],
   imports: [
     BrowserModule,
-    CustomMaterialModule
+    CustomMaterialModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
