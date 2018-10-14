@@ -25,3 +25,14 @@ button{
   width:calc(100% / 3);
   background-color: #bcd6ff
 }
+
+.tickButton {
+  padding-top: 7px;
+  padding-right: 20px;
+  padding-bottom: 7px;
+  padding-left: 20px;
+  margin-top: 30px;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  margin-left: 20px;
+}

@@ -1,6 +1,6 @@
 <mat-tab-group>
   <mat-tab class='tab' label="Neue Zecke eintragen">
-    <button mat-raised-button (click)="newTick()">neue Zecke eintragen</button>
+    <button class='tickButton' mat-raised-button (click)="newTick()">neue Zecke eintragen</button>
   </mat-tab>
   <mat-tab class='tab' label="Liste aller Zecken">
     <mat-list class='list' *ngFor="let tick of ticks">
