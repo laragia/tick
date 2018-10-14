@@ -1,11 +1,17 @@
-<p>
-  Zeckentagebuch
-</p>
+<mat-tab-group>
+  <mat-tab class='tab' label="Neue Zecke eintragen">
+    <button mat-raised-button (click)="newTick()">neue Zecke eintragen</button>
+  </mat-tab>
+  <mat-tab class='tab' label="Liste aller Zecken">
+    <mat-list class='list' *ngFor="let tick of ticks">
+      {{ tick.place }}, {{ tick.date }}, {{ tick.reminder }}, {{ tick.bodyLocation }}
+    </mat-list>
+  </mat-tab>
+  <mat-tab class='tab' label="Grafik">
+    //Grafik
+  </mat-tab>
+</mat-tab-group>
 
-<button mat-raised-button (click)="newTick()">neue Zecke eintragen</button>
 
-<ul>
-  <mat-list class='list' *ngFor="let tick of ticks">
-        {{ tick.place }}, {{ tick.date }},  {{ tick.reminder }},  {{ tick.bodyLocation }}
-</mat-list>
-</ul>
+<!--TODO tabs > wie dass screen durch drei?? dass es sich anpasst??-->
+<!--TODO letztes angewähltes tab kommt auch bei neustart als erstes-->
