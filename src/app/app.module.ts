@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { TickComponent } from './tick/tick.component';
 import { TickDialogComponent } from './tick/tick-dialog/tick-dialog.component';
 import { FormsModule } from '@angular/forms';
-import { TickTableComponent } from './app/tick/tick-table.component';
+import { TickTableComponent } from './tick/tick-table/tick-table.component';
 
 @NgModule({
   declarations: [
