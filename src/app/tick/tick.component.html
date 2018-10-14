@@ -3,9 +3,7 @@
     <button class='tickButton' mat-raised-button (click)="newTick()">neue Zecke eintragen</button>
   </mat-tab>
   <mat-tab class='tab' label="Liste aller Zecken">
-    <mat-list class='list' *ngFor="let tick of ticks">
-      {{ tick.place }}, {{ tick.date }}, {{ tick.reminder }}, {{ tick.bodyLocation }}
-    </mat-list>
+    <app-tick-table></app-tick-table>
   </mat-tab>
   <mat-tab class='tab' label="Grafik">
     //Grafik
@@ -15,3 +13,7 @@
 
 <!--TODO tabs > wie dass screen durch drei?? dass es sich anpasst??-->
 <!--TODO letztes angewähltes tab kommt auch bei neustart als erstes-->
+
+<!--<mat-list class='list' *ngFor="let tick of ticks">
+      {{ tick.place }}, {{ tick.date }}, {{ tick.reminder }}, {{ tick.bodyLocation }}
+    </mat-list>-->
