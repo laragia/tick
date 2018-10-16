@@ -12,8 +12,7 @@ export class TickTableComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
   dataSource: TickTableDataSource;
 
-  /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name'];
+  displayedColumns = ['place', 'date'];
 
   ngOnInit() {
     this.dataSource = new TickTableDataSource(this.paginator, this.sort);

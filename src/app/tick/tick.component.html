@@ -1,19 +1,18 @@
 <mat-tab-group>
-  <mat-tab class='tab' label="Neue Zecke eintragen">
+  <mat-tab class='tab1' label="Neue Zecke eintragen">
     <button class='tickButton' mat-raised-button (click)="newTick()">neue Zecke eintragen</button>
   </mat-tab>
-  <mat-tab class='tab' label="Liste aller Zecken">
+  <mat-tab class='tab2' label="Liste aller Zecken">
     <app-tick-table></app-tick-table>
+    <mat-list class='list' *ngFor="let tick of ticks">
+          {{ tick.place }}, {{ tick.date }}, {{ tick.reminder }}, {{ tick.bodyLocation }}
+        </mat-list>
   </mat-tab>
-  <mat-tab class='tab' label="Grafik">
+  <mat-tab class='tab3' label="Grafik">
     //Grafik
   </mat-tab>
 </mat-tab-group>
 
 
-<!--TODO tabs > wie dass screen durch drei?? dass es sich anpasst??-->
+<!--TODO tabs > wie dass screen durch drei?? dass es sich anpasst?? evt mit css grid-->
 <!--TODO letztes angewähltes tab kommt auch bei neustart als erstes-->
-
-<!--<mat-list class='list' *ngFor="let tick of ticks">
-      {{ tick.place }}, {{ tick.date }}, {{ tick.reminder }}, {{ tick.bodyLocation }}
-    </mat-list>-->

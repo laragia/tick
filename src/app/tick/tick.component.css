@@ -21,8 +21,18 @@ button{
   font-family: sans-serif;
 }
 
-.tab {
-  width:calc(100% / 3);
+.tab1 {
+  width: 33%;
+  background-color: #bcd6ff
+}
+
+.tab2 {
+  width: 33%;
+  background-color: #bcd6ff
+}
+
+.tab3 {
+  width: auto%;
   background-color: #bcd6ff
 }
 

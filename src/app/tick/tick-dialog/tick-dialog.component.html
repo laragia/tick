@@ -13,10 +13,10 @@
 
 </div>
 
-<mat-slide-toggle [(ngModel)]="tick.reminder">Erinnerung</mat-slide-toggle>
+<mat-slide-toggle class="reminder" [(ngModel)]="tick.reminder">Erinnerung</mat-slide-toggle>
 <!--Will man eine Erinnerung-->
 
-<button mat-raised-button (click)="close()">abbrechen</button>
+<button class='button' mat-raised-button (click)="close()">abbrechen</button>
 <!--um Dialog zu schliessen-->
-<button mat-raised-button (click)="save()">sichern</button>
+<button class='button' mat-raised-button (click)="save()">sichern</button>
 <!--um eingegebene Daten zu sichern-->
