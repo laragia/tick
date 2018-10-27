@@ -1,24 +1,24 @@
-<div class="mat-elevation-z8">
-  <table mat-table #table [dataSource]="dataSource" matSort aria-label="Zecken">
-
-    <ng-container matColumnDef="place" *ngFor='let tick of ticks'>
-      <th mat-header-cell matHeaderCellDef mat-sort-header>Datum</th>
-      <td mat-cell='let row'>{{this.tick.place}}</td>
+<mat-table [dataSource]="ticks">
+    <ng-container matColumnDef="place">
+      <mat-header-cell *matHeaderCellDef>Ort</mat-header-cell>
+      <mat-cell *matCellDef='let tick'>{{tick.place}}</mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="date" *ngFor='let tick of ticks'>
-      <th mat-header-cell matHeaderCellDef mat-sort-header>Datum</th>
-      <td mat-cell='let tick'>{{this.tick.date}}</td>
+    <ng-container matColumnDef="date">
+      <mat-header-cell *matHeaderCellDef>Datum</mat-header-cell>
+      <mat-cell *matCellDef='let tick'>{{tick.date}}</mat-cell>
     </ng-container>
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let tick; columns: displayedColumns;"></tr>
-  </table>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let tick; columns: displayedColumns;"></mat-row>
+</mat-table>
+<mat-paginator #paginator [length]="dataSource.data.length" [pageIndex]="0" [pageSize]="50" [pageSizeOptions]="[10, 15, 50]">
+</mat-paginator>
 
-  <mat-paginator #paginator [length]="dataSource.data.length" [pageIndex]="0" [pageSize]="50" [pageSizeOptions]="[10, 15, 50]">
-  </mat-paginator>
-</div>
+  <!--mat-paginator #paginator [length]="dataSource.data.length" [pageIndex]="0" [pageSize]="50" [pageSizeOptions]="[10, 15, 50]">
+  </mat-paginator-->
 
-<mat-list class='list' *ngFor="let tick of ticks">
+<!--<mat-list class='list' *ngFor="let tick of ticks">
       {{ tick.place }}, {{ tick.date }}, {{ tick.reminder }}, {{ tick.bodyLocation }}
     </mat-list>
+-->

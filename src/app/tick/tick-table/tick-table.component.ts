@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { MatPaginator, MatSort } from '@angular/material';
 import { TickTableDataSource } from './tick-table-datasource';
 
@@ -11,8 +11,12 @@ export class TickTableComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   dataSource: TickTableDataSource;
+  @Input('zecken') ticks: Tick[]; // TODO = [{place: 'Männedorf', date: '27.10.18'},{place: 'Zürich', date: '26.10.18'}];
 
   displayedColumns = ['place', 'date'];
+
+  constructor() {
+  }
 
   ngOnInit() {
     this.dataSource = new TickTableDataSource(this.paginator, this.sort);

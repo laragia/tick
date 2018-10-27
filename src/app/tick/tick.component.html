@@ -3,10 +3,7 @@
     <button class='tickButton' mat-raised-button (click)="newTick()">neue Zecke eintragen</button>
   </mat-tab>
   <mat-tab class='tab2' label="Liste aller Zecken">
-    <app-tick-table></app-tick-table>
-    <mat-list class='list' *ngFor="let tick of ticks">
-          {{ tick.place }}, {{ tick.date }}, {{ tick.reminder }}, {{ tick.bodyLocation }}
-        </mat-list>
+    <app-tick-table [zecken]=ticks></app-tick-table>
   </mat-tab>
   <mat-tab class='tab3' label="Grafik">
     //Grafik
