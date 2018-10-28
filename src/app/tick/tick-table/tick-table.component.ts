@@ -11,8 +11,7 @@ export class TickTableComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   dataSource: TickTableDataSource;
-  @Input('inputTicks') ticks: Tick[]; // TODO = [{place: 'Männedorf', date: '27.10.18'},{place: 'Zürich', date: '26.10.18'}];
-
+  @Input('inputTicks') ticks: tick[]; 
   displayedColumns = ['place', 'date'];
 
   constructor() {
