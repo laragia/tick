@@ -6,6 +6,9 @@ import { TickComponent } from './tick/tick.component';
 import { TickDialogComponent } from './tick/tick-dialog/tick-dialog.component';
 import { FormsModule } from '@angular/forms';
 import { TickTableComponent } from './tick/tick-table/tick-table.component';
+import { InlineSVGModule } from 'ng-inline-svg';
+import { HttpClientModule } from '@angular/common/http';
+import { InlineSVGModule } from 'ng-inline-svg';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,11 @@ import { TickTableComponent } from './tick/tick-table/tick-table.component';
   imports: [
     BrowserModule,
     CustomMaterialModule,
-    FormsModule
+    FormsModule,
+    InlineSVGModule
+    BrowserModule,
+    CustomMaterialModule,
+    FormsModule, HttpClientModule, InlineSVGModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent],

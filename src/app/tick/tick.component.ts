@@ -2,6 +2,7 @@ import { Component, OnInit, } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material'
 import { TickDialogComponent } from './tick-dialog/tick-dialog.component'
 import { Tick } from './tick.model'
+import { ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-tick',
@@ -10,6 +11,8 @@ import { Tick } from './tick.model'
 })
 export class TickComponent implements OnInit {
   private ticks: Tick[] = [];
+  @ViewChild('svgFigure') dataContainer: ElementRef;
+
   constructor(private matDialog: MatDialog) {
   }
 

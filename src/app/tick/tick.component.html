@@ -6,11 +6,9 @@
     <app-tick-table [inputTicks]=ticks></app-tick-table>
   </mat-tab>
   <mat-tab class='tab3' label="Grafik">
-    <figure>
-      <img src='./images/manndef.svg' width="100%">
-      <!--TODO was ist hier falsch???-->
-    </figure>
+  <div [inlineSVG]="'./src/app/tick/images/manndef.svg'" align=centre></div>
   </mat-tab>
+
 </mat-tab-group>
 
 

@@ -9,6 +9,16 @@
       <mat-cell *matCellDef='let tick'>{{tick.date}}</mat-cell>
     </ng-container>
 
+    <ng-container matColumnDef="bodyLocation">
+      <mat-header-cell *matHeaderCellDef>Körperstelle</mat-header-cell>
+      <mat-cell *matCellDef='let tick'>{{tick.bodyLocation}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="reminder">
+      <mat-header-cell *matHeaderCellDef>Erinnerung</mat-header-cell>
+      <mat-cell *matCellDef='let tick'>{{tick.reminder}}</mat-cell>
+    </ng-container>
+    
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let tick; columns: displayedColumns;"></mat-row>
 </mat-table>
