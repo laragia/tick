@@ -87,6 +87,7 @@
        style="stroke-width:1"
        d="m 334.06135,154.2483 c -2.15824,-0.4305 -4.18298,-1.41848 -6.35742,-1.7871 -2.22534,-0.43725 -4.32489,-1.4814 -6.60644,-1.7139 -2.32455,-0.50175 -4.57085,-1.41263 -6.95802,-1.64063 -2.91039,-0.543 -5.81769,-1.20045 -8.80371,-0.98145 -2.75226,0 -5.4948,-1.5e-4 -8.24706,0 -1.49898,1.5e-4 -2.99811,-9e-4 -4.49707,0 -1.53645,0 -3.07783,0.007 -4.61426,0.015 -2.27627,0.007 -4.5502,0.0225 -6.82617,0.06 -2.43796,0.045 -4.87926,0.11175 -7.30957,0.3225 -2.67399,0.23925 -5.33861,0.579 -7.9541,1.20113 -0.36848,0.0915 -3.13359,0.25875 -4.7754,0.1755 -2.66067,0.0375 -5.33781,0.0675 -7.96875,0.513 -2.78969,0.66525 -4.12485,1.30132 -6.67968,2.0361 -2.53496,-24.63068 -7.75526,-44.22788 -15.84961,-55.883778 -25.00001,-39 -15,-66.00585 30,-81.00585 61.78003,-19.959675 70.18372,-7.5312 73.44726,138.691428 z"
        id="path930"
+       onClick="newTick()"
        inkscape:connector-curvature="0" />
     <path
        style="fill:#000403;fill-opacity:1;stroke-width:1"
@@ -338,6 +339,7 @@
        sodipodi:nodetypes="cccccccccc"
        onmouseover="this.style.opacity=1"
        onmouseout="this.style.opacity=0"
+       onclick='newTick()'
        inkscape:label="#path1134">
       <title
          id="title1136">rechte Hand</title>
@@ -396,8 +398,9 @@
        id="rechter_Fuss"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccccc"
-       onmouseover="this.style.opacity=1"
+       onmouseover="newTick()"
        onmouseout="this.style.opacity=0"
+       onclick="console.log('NewTick')"
        inkscape:label="#path882">
       <title
          id="title884">rechter Fuss</title>

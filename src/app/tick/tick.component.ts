@@ -11,7 +11,6 @@ import { ViewChild, ElementRef } from '@angular/core';
 })
 export class TickComponent implements OnInit {
   private ticks: Tick[] = [];
-  @ViewChild('svgFigure') dataContainer: ElementRef;
 
   constructor(private matDialog: MatDialog) {
   }
@@ -25,6 +24,7 @@ export class TickComponent implements OnInit {
   }
 
   newTick() {
+    console.log("newTick()");
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.disableClose = true;

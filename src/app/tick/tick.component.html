@@ -1,12 +1,14 @@
-<mat-tab-group>
+
+  <mat-tab-group>
   <mat-tab class='tab1' label="Neue Zecke eintragen">
+    <div [inlineSVG]="'./src/app/tick/images/manndef.svg'" class='graphic'></div>
     <button class='tickButton' mat-raised-button (click)="newTick()">neue Zecke eintragen</button>
   </mat-tab>
   <mat-tab class='tab2' label="Liste aller Zecken">
     <app-tick-table [inputTicks]=ticks></app-tick-table>
   </mat-tab>
   <mat-tab class='tab3' label="Grafik">
-  <div [inlineSVG]="'./src/app/tick/images/manndef.svg'" align=centre></div>
+    <button class='tickButton' mat-raised-button (click)="newTick()">neue Zecke eintragen</button>
   </mat-tab>
 
 </mat-tab-group>

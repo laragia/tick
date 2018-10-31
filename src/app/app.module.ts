@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { TickTableComponent } from './tick/tick-table/tick-table.component';
 import { InlineSVGModule } from 'ng-inline-svg';
 import { HttpClientModule } from '@angular/common/http';
-import { InlineSVGModule } from 'ng-inline-svg';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +21,7 @@ import { InlineSVGModule } from 'ng-inline-svg';
     BrowserModule,
     CustomMaterialModule,
     FormsModule,
-    InlineSVGModule
+    InlineSVGModule,
     BrowserModule,
     CustomMaterialModule,
     FormsModule, HttpClientModule, InlineSVGModule.forRoot()
