@@ -3,6 +3,7 @@ import { MatDialog, MatDialogConfig } from '@angular/material'
 import { TickDialogComponent } from './tick-dialog/tick-dialog.component'
 import { Tick } from './tick.model'
 import { ViewChild, ElementRef } from '@angular/core';
+import {SwPush} from "@angular/service-worker";
 
 @Component({
   selector: 'app-tick',
@@ -12,7 +13,11 @@ import { ViewChild, ElementRef } from '@angular/core';
 export class TickComponent implements OnInit {
   private ticks: Tick[] = [];
 
-  constructor(private matDialog: MatDialog) {
+  readonly VAPID_PUBLIC_KEY = "BP1hP9SQD6cYItHiHobyjOMxdLz1TFfJ57AxLaQX4gvs1jBK5F3Wx1Ud7LRY5WE9ZlIIZyb4-BELQpICIZ2jzR4";
+
+  constructor(
+    private matDialog: MatDialog,
+    private swPush: SwPush,) {
   }
 
   ngOnInit() {
@@ -47,4 +52,28 @@ export class TickComponent implements OnInit {
       }
     });
   }
+
+
+  reminder() {
+
+        this.swPush.requestSubscription({
+            serverPublicKey: this.VAPID_PUBLIC_KEY
+        })
+        .then(sub => {
+
+            this.sub = sub;
+
+
+            console.log("Notification Subscription: ", sub);
+
+            this.newsletterService.addPushSubscriber(sub).subscribe(
+                () => console.log('Sent push subscription object to server.'),
+                err =>  console.log('Could not send subscription object to server, reason: ', err)
+            );
+
+        })
+        .catch(err => console.error("Could not subscribe to notifications", err));
+
+    }
+
 }

@@ -9,6 +9,7 @@
   </mat-tab>
   <mat-tab class='tab3' label="Grafik">
     <button class='tickButton' mat-raised-button (click)="newTick()">neue Zecke eintragen</button>
+    <button class="reminderButton" mat-raised-button (click)="reminder()" [disabled]="sub">Erinnerung</button>
   </mat-tab>
 
 </mat-tab-group>
