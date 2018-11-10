@@ -59,7 +59,7 @@ export class PushNotificationsService {
     generateNotification(title: string, content: string): void {
         let self = this;
         let options: {
-          body: content
+  /*        body: content*/
         }
         let notify = self.create(title, {body: content}).subscribe();
     }
