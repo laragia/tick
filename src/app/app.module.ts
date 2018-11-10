@@ -8,6 +8,8 @@ import { FormsModule } from '@angular/forms';
 import { TickTableComponent } from './tick/tick-table/tick-table.component';
 import { InlineSVGModule } from 'ng-inline-svg';
 import { HttpClientModule } from '@angular/common/http';
+import { PushNotificationsService } from './tick/notification.service';
+
 
 
 @NgModule({
@@ -26,7 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
     CustomMaterialModule,
     FormsModule, HttpClientModule, InlineSVGModule.forRoot()
   ],
-  providers: [],
+  providers: [PushNotificationsService],
   bootstrap: [AppComponent],
   entryComponents: [TickDialogComponent]
 })

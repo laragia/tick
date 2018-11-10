@@ -6,7 +6,7 @@
   <!--Inout Feld um zu speichern an welchem Ort man gebisen wurde-->
 
   <mat-form-field>
-    <input matInput class="date" [matDatepicker]="picker" ng-model-options="{ timezone: 'gmt' }" placeholder="Choose a date" [(ngModel)]="tick.date">
+    <input matInput class="date" [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="tick.date">
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
     <!--wann wurde man gebissen? mit Datepicker-->
