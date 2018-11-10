@@ -227,6 +227,7 @@
        sodipodi:nodetypes="cccccccc"
        onmouseover="this.style.opacity=1"
        onmouseout="this.style.opacity=0"
+
        inkscape:label="#path953">
       <title
          id="title955">linker Oberarm</title>
@@ -400,7 +401,7 @@
        sodipodi:nodetypes="cccccc"
        onmouseover="newTick()"
        onmouseout="this.style.opacity=0"
-       onclick="console.log('NewTick')"
+       onclick="newTick()"
        inkscape:label="#path882">
       <title
          id="title884">rechter Fuss</title>
