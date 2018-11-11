@@ -1,7 +1,8 @@
 export interface Tick {
-  //id: number // nummer eindeutig vergeben//
+  // id: number;
   place: string;
   date: Date;
-  reminder: boolean;
-  bodyLocation: string; // TODO ?
+  reminder ?: boolean;
+  reminded ?: string;
+  bodyLocation ?: string; // TODO ?
 }

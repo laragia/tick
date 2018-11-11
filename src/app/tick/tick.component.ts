@@ -5,7 +5,7 @@ import { Tick } from './tick.model';
 import { ViewChild, ElementRef } from '@angular/core';
 import { PushNotificationsService } from './notification.service';
 import * as moment from 'moment';
-import 'moment/locale/pt-br';
+import 'moment/locale/de';
 
 @Component({
   selector: 'app-tick',
@@ -15,8 +15,7 @@ import 'moment/locale/pt-br';
 export class TickComponent implements OnInit {
   private ticks: Tick[] = [];
 
-  constructor(private matDialog: MatDialog, private notificationService: PushNotificationsService)
-  {
+  constructor(private matDialog: MatDialog, private notificationService: PushNotificationsService) {
     this.notificationService.requestPermission();
   }
 
@@ -24,7 +23,7 @@ export class TickComponent implements OnInit {
     this.ticks = JSON.parse(localStorage.getItem('ticks'));
     if (this.ticks == null) {
       this.ticks = [];
-      }
+    }
     this.checkTicks();
 
   }
@@ -57,23 +56,29 @@ export class TickComponent implements OnInit {
 
   pushNotification() {
     console.log('PushNotification');
-    let data: Array <any> = [];
-    data.push({'title': 'Erinnerung',
-      'alertContent': 'Bitte kontrollieren sie ihre Zecken!'});
-    this.notificationService.generateNotification('Zecken', 'Bitte kontrillieren sie ihre Zecken!');
+    let data: Array<any> = [];
+    data.push({
+      'title': 'Erinnerung',
+      'alertContent': 'Bitte kontrollieren sie ihre Zecken!'
+    });
+    this.notificationService.generateNotification('Zeckenkontrolle', 'Bitte kontrolliere deine Zecken!');
 
   }
 
   checkTicks() {
     let checkDate = moment().subtract(3, 'week');
-    this.ticks.forEach(function(tick){
+    this.ticks.forEach(function(tick) {
       if (tick.reminder) {
-        if (moment(tick.date) > checkDate ) {
-          this.pushNotification();
+        if (moment(tick.date) > checkDate) {
+          let date = moment().format('DD.MM.YYYY');
+          if (tick.reminded !== date) {
+            this.pushNotification();
+            tick.reminded = moment().format('DD.MM.YYYY');
+          }
         }
       }
-
     }, this);
+    localStorage.setItem("ticks", JSON.stringify(this.ticks));
 
   }
 
