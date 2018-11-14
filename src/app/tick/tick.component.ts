@@ -14,9 +14,11 @@ import 'moment/locale/de';
 })
 export class TickComponent implements OnInit {
   private ticks: Tick[] = [];
+  private svgPath = 'assets/manndef.svg';
 
-  constructor(private matDialog: MatDialog, private notificationService: PushNotificationsService) {
+  constructor(private matDialog: MatDialog, private notificationService: PushNotificationsService,) {
     this.notificationService.requestPermission();
+    (<any>window).newTick = this.newTick.bind(this);
   }
 
   ngOnInit() {
@@ -28,7 +30,7 @@ export class TickComponent implements OnInit {
 
   }
 
-  newTick() {
+  newTick(body: string) {
     console.log("newTick()");
     const dialogConfig = new MatDialogConfig();
 

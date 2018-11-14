@@ -199,6 +199,7 @@
        sodipodi:nodetypes="ccccccccc"
        onmouseover="this.style.opacity=1"
        onmouseout="this.style.opacity=0"
+       onclick="newTick('Brust')"
        inkscape:label="#path947">
       <title
          id="title957">Brust</title>
@@ -215,7 +216,9 @@
        id="rechter_Oberarm"
        inkscape:connector-curvature="0"
        onmouseover="this.style.opacity=1"
-       onmouseout="this.style.opacity=0">
+       onmouseout="this.style.opacity=0"
+       onclick="newTick('rechter_Oberarm')">
+
       <title
          id="title1138">rechter Oberarm</title>
     </path>
@@ -227,6 +230,7 @@
        sodipodi:nodetypes="cccccccc"
        onmouseover="this.style.opacity=1"
        onmouseout="this.style.opacity=0"
+       onclick="newTick('linker_Oberarm')"
 
        inkscape:label="#path953">
       <title
@@ -240,7 +244,8 @@
        sodipodi:nodetypes="cccccccc"
        onmouseover="this.style.opacity=1"
        onmouseout="this.style.opacity=0"
-       inkscape:label="#path961">
+       inkscape:label="#path961"
+       onclick="newTick('Kopf')">
       <title
          id="title965">Kopf</title>
     </path>
@@ -256,7 +261,8 @@
        id="Hals"
        inkscape:connector-curvature="0"
        onmouseover="this.style.opacity=1"
-       onmouseout="this.style.opacity=0">
+       onmouseout="this.style.opacity=0"
+       onclick="newTick('Hals')">
       <title
          id="title1140">Hals</title>
     </path>
@@ -273,6 +279,7 @@
        sodipodi:nodetypes="ccccccccc"
        onmouseover="this.style.opacity=1"
        onmouseout="this.style.opacity=0"
+       onclick="newTick('Bauch')"
        inkscape:label="#path973">
       <title
          id="title975">Bauch/ Unterkörper</title>
@@ -285,7 +292,8 @@
        sodipodi:nodetypes="ccccccc"
        onmouseover="this.style.opacity=1"
        onmouseout="this.style.opacity=0"
-       inkscape:label="#path977">
+       inkscape:label="#path977"
+       onclick="newTick('linke_Ellbogenbeuge')">
       <title
          id="title979">linke Ellbogenbeuge</title>
     </path>
@@ -297,6 +305,7 @@
        sodipodi:nodetypes="ccccccc"
        onmouseover="this.style.opacity=1"
        onmouseout="this.style.opacity=0"
+       onclick="newTick('linker_Unterarm')"
        inkscape:label="#path981">
       <title
          id="title983">linker Unterarm</title>
@@ -309,6 +318,7 @@
        sodipodi:nodetypes="cccccccccc"
        inkscape:label="#path985"
        onmouseover="this.style.opacity=1"
+       onclick="newTick('linke_Hand')"
        onmouseout="this.style.opacity=0">
       <title
          id="title987">linke Hand</title>
@@ -320,6 +330,7 @@
        id="rechte_Ellbogenbeuge"
        inkscape:connector-curvature="0"
        onmouseover="this.style.opacity=1"
+       onclick="newTick('rechte_Ellbogenbeuge')"
        onmouseout="this.style.opacity=0">
       <title
          id="title1142">rechte Ellbogenbeuge</title>
@@ -331,6 +342,8 @@
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccccc"
        onmouseover="this.style.opacity=1"
+       onclick="newTick('TODO')"
+
        onmouseout="this.style.opacity=0" />
     <path
        style="opacity:1;fill:#f5d5ff;fill-opacity:1;stroke:none;stroke-width:7.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -340,7 +353,7 @@
        sodipodi:nodetypes="cccccccccc"
        onmouseover="this.style.opacity=1"
        onmouseout="this.style.opacity=0"
-       onclick='newTick()'
+       onclick="newTick('rechte_Hand')"
        inkscape:label="#path1134">
       <title
          id="title1136">rechte Hand</title>
@@ -353,6 +366,7 @@
        sodipodi:nodetypes="ccccccc"
        onmouseover="this.style.opacity=1"
        onmouseout="this.style.opacity=0"
+       onclick="newTick('rechter_Oberschenkel')"
        inkscape:label="#path864">
       <title
          id="title866">rechter Oberschenkel</title>
@@ -365,6 +379,7 @@
        sodipodi:nodetypes="cccccccc"
        onmouseover="this.style.opacity=1"
        onmouseout="this.style.opacity=0"
+       onclick="newTick('linker_Oberschenkel')"
        inkscape:label="#path868">
       <title
          id="title872">linke Oberschenkel</title>
@@ -377,6 +392,7 @@
        sodipodi:nodetypes="cccccc"
        onmouseover="this.style.opacity=1"
        onmouseout="this.style.opacity=0"
+       onclick="newTick('rechtes_Knie_Hand')"
        inkscape:label="#path874">
       <title
          id="title876">rechtes Knie</title>
@@ -389,6 +405,7 @@
        sodipodi:nodetypes="ccccc"
        onmouseover="this.style.opacity=1"
        onmouseout="this.style.opacity=0"
+       onclick="newTick('rechtes_Schinbein_Hand')"
        inkscape:label="#path878">
       <title
          id="title880">rechtes Schinbein</title>
@@ -399,9 +416,9 @@
        id="rechter_Fuss"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccccc"
-       onmouseover="newTick()"
+       onmouseover="this.style.opacity=1"
        onmouseout="this.style.opacity=0"
-       onclick="newTick()"
+       onclick="newTick('rechter_Fuss')"
        inkscape:label="#path882">
       <title
          id="title884">rechter Fuss</title>
@@ -414,6 +431,7 @@
        sodipodi:nodetypes="ccccccc"
        onmouseover="this.style.opacity=1"
        onmouseout="this.style.opacity=0"
+       onclick="newTick('linkes_Knie')"
        inkscape:label="#path983">
       <title
          id="title985">linkes Knie</title>
@@ -425,6 +443,7 @@
        id="linkes_Schinbein"
        inkscape:connector-curvature="0"
        onmouseover="this.style.opacity=1"
+       onclick="newTick('linkes_Schinbein')"
        onmouseout="this.style.opacity=0">
       <title
          id="title1037">linkes Schinbein</title>
@@ -437,6 +456,7 @@
        sodipodi:nodetypes="ccccccc"
        onmouseover="this.style.opacity=1"
        onmouseout="this.style.opacity=0"
+       onclick="newTick('linker_Fuss')"
        inkscape:label="#path1033">
       <title
          id="title1035">linker Fuss</title>
