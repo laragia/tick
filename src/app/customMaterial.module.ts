@@ -1,4 +1,4 @@
-import { MatButtonModule, MatCheckboxModule, MatSlideToggleModule, MatFormFieldModule, MatNativeDateModule, MatDatepickerModule, MatInputModule, MatDialogModule, MatListModule, MatTabsModule, MatTableModule, MatPaginatorModule, MatSortModule} from '@angular/material';
+import { MatButtonModule, MatCheckboxModule, MatSlideToggleModule, MatFormFieldModule, MatNativeDateModule, MatDatepickerModule, MatInputModule, MatDialogModule, MatListModule, MatTabsModule, MatTableModule, MatPaginatorModule, MatSortModule,} from '@angular/material';
 import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 
