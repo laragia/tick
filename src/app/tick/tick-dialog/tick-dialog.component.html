@@ -1,23 +1,27 @@
 <div class="example-container">
+  <div mat-dialog-content>
+    <mat-form-field>
+      <input matInput class="place" placeholder="Ort" [(ngModel)]="tick.place">
+    </mat-form-field>
+    <!--Inout Feld um zu speichern an welchem Ort man gebisen wurde-->
+    <mat-form-field>
+      <input matInput class="bodyLocation" placeholder="Körperteil" [(ngModel)]="tick.bodyLocation">
+    </mat-form-field>
 
-  <mat-form-field>
-    <input matInput class="place" placeholder="Ort" [(ngModel)]="tick.place">
-  </mat-form-field>
-  <!--Inout Feld um zu speichern an welchem Ort man gebisen wurde-->
-
-  <mat-form-field>
-    <input matInput class="date" [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="tick.date">
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-    <!--wann wurde man gebissen? mit Datepicker-->
-  </mat-form-field>
-
+    <mat-form-field>
+      <input matInput class="date" [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="tick.date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <!--wann wurde man gebissen? mit Datepicker-->
+    </mat-form-field>
+    <mat-slide-toggle class="reminder" [(ngModel)]="tick.reminder">Erinnerung</mat-slide-toggle>
+  </div>
 </div>
 
-<mat-slide-toggle class="reminder" [(ngModel)]="tick.reminder">Erinnerung</mat-slide-toggle>
 <!--Will man eine Erinnerung-->
-
-<button class='button' mat-raised-button (click)="close()">abbrechen</button>
-<!--um Dialog zu schliessen-->
-<button class='button' mat-raised-button (click)="save()">sichern</button>
-<!--um eingegebene Daten zu sichern-->
+<div mat-dialog-actions>
+  <button class='button' mat-raised-button (click)="close()">abbrechen</button>
+  <!--um Dialog zu schliessen-->
+  <button class='button' mat-raised-button (click)="save()">sichern</button>
+  <!--um eingegebene Daten zu sichern-->
+</div>
