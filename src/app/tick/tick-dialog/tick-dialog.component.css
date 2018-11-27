@@ -11,13 +11,13 @@
   width: 100%;
 }
 
-.button {
-  display: block;
-  border-radius: 8px;
-  margin: 10px, 5px;
-  width: 50%;
-}
+
 
 .reminder {
   margin: 10px, 5px;
+}
+
+
+.mat-raised-button {
+  display: block;
 }

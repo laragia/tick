@@ -31,10 +31,7 @@ button{
   background-color: #bcd6ff
 }
 
-.tab3 {
-  width: auto%;
-  background-color: #bcd6ff
-}
+
 
 .Button {
   padding-top: 7px;
@@ -47,7 +44,9 @@ button{
   margin-left: 20px;
 }
 
-.graphic {
-  height: 95%;
-  align-items: center;
+.svg{
+  display: inline-flex;
+  align-self: center;
+  height: 14em;
+  width: 14em;
 }

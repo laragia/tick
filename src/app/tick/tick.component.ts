@@ -17,7 +17,7 @@ export class TickComponent implements OnInit {
   private ticks: Tick[] = [];
   // private svgPath = 'assets/manndef.svg';
 
-  constructor(private matDialog: MatDialog, private notificationService: PushNotificationsService,) {
+  constructor(private matDialog: MatDialog, private notificationService: PushNotificationsService, ) {
     this.notificationService.requestPermission();
     // (<any>window).newTick = this.newTick.bind(this);
   }
@@ -66,7 +66,7 @@ export class TickComponent implements OnInit {
 
   pushNotification() {
     console.log('PushNotification');
-    let data: Array<any> = [];
+    const data: Array<any> = [];
     data.push({
       'title': 'Erinnerung',
       'alertContent': 'Bitte kontrollieren sie ihre Zecken!'
@@ -76,11 +76,11 @@ export class TickComponent implements OnInit {
   }
 
   checkTicks() {
-    let checkDate = moment().subtract(3, 'week');
+    const checkDate = moment().subtract(3, 'week');
     this.ticks.forEach(function(tick) {
       if (tick.reminder) {
         if (moment(tick.date) > checkDate) {
-          let date = moment().format('DD.MM.YYYY');
+          const date = moment().format('DD.MM.YYYY');
           if (tick.reminded !== date) {
             this.pushNotification();
             tick.reminded = moment().format('DD.MM.YYYY');
@@ -88,7 +88,7 @@ export class TickComponent implements OnInit {
         }
       }
     }, this);
-    localStorage.setItem("ticks", JSON.stringify(this.ticks));
+    localStorage.setItem('ticks', JSON.stringify(this.ticks));
 
   }
 
@@ -308,11 +308,11 @@ mySvg = `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
        style="opacity:1;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 36.669922,47.066406 c -4.156219,1.94452 -8.484587,3.75727 -10.013672,7.722656 -1.588769,2.958107 -2.026232,6.921732 -1.953125,11.333985 -1.043019,8.263533 -2.710167,16.371414 -4.582031,24.427734 6.562646,-1.02728 11.330641,0.124639 14.978515,2.636719 l 1.390625,-6.015625 c -0.0046,0.0072 -0.01007,0.01378 -0.01367,0.02148 -0.03277,0.07103 0.0014,-0.0016 0.01953,-0.04102 l 0.144531,-0.623047 c -0.006,-0.01604 -0.02436,-0.04865 -0.01953,-0.07813 0.0085,-0.05391 0.02676,-0.103671 0.05469,-0.150391 0.0037,-0.0081 0.0061,-0.01534 0.0098,-0.02344 0.0041,-0.01053 0.0045,-0.01323 0.0078,-0.01953 0.005,-0.02052 0.0082,-0.0407 0.01563,-0.06055 -0.0067,0.104517 0.0034,-0.08966 0.0098,-0.09766 0.0084,-0.04695 0.01678,-0.09455 0.0293,-0.140625 0.0085,-0.03134 0.02767,-0.0401 0.03906,-0.06641 l 1.517579,-6.558594 c 0.81425,-5.600986 1.821314,-11.162917 1.640624,-16.96289 -0.347517,-5.101467 -0.690253,-10.203221 -3.27539,-15.304688 z"
        transform="matrix(7.5,0,0,-7.5,-48.779288,2088.5161)"
-       id="rechter_Oberarm"
+       id="rechter Oberarm"
        inkscape:connector-curvature="0"
        onmouseover="this.style.opacity=1"
        onmouseout="this.style.opacity=0"
-       onclick="newTick('rechter_Oberarm')">
+       onclick="newTick('rechter Oberarm')">
 
       <title
          id="title1138">rechter Oberarm</title>
@@ -320,12 +320,12 @@ mySvg = `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
     <path
        style="opacity:1;fill:#ff6600;fill-opacity:1;stroke:none;stroke-width:7.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 621.87377,1730.5522 c 23.61392,-9.8417 46.02019,-20.2872 54.30853,-37.7917 19.93665,-31.8386 31.32912,-102.8529 32.15558,-133.2994 9.05865,-24.5284 16.94801,-95.9796 26.00666,-144.8464 -44.78552,1.0224 -79.90918,-13.1381 -113.94767,-29.0039 -6.05562,45.6431 -18.12825,86.8892 -25.48043,124.74 -2.83701,37.5579 -4.42667,75.1549 -1.16929,115.76 1.61392,56.1582 14.22676,82.0695 28.12662,104.4414 z"
-       id="linker_Oberarm"
+       id="linker Oberarm"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccccccc"
        onmouseover="this.style.opacity=1"
        onmouseout="this.style.opacity=0"
-       onclick="newTick('linker_Oberarm')"
+       onclick="newTick('linker Oberarm')"
 
        inkscape:label="#path953">
       <title
@@ -382,25 +382,25 @@ mySvg = `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
     <path
        style="opacity:0.997;fill:#ff9955;fill-opacity:1;stroke:none;stroke-width:7.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 623.39729,1373.4959 c 13.53568,6.9878 27.89231,14.0889 51.77318,22.5037 18.68696,4.709 38.51914,7.8564 61.18092,7.1452 l 8.7021,-47.1074 c -14.2834,-9.7492 -33.31174,-13.9627 -51.78427,-18.8246 -23.98341,-5.1371 -44.47717,-6.0367 -63.39732,-5.0255 z"
-       id="linke_Ellbogenbeuge"
+       id="linke Ellbogenbeuge"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccccc"
        onmouseover="this.style.opacity=1"
        onmouseout="this.style.opacity=0"
        inkscape:label="#path977"
-       onclick="newTick('linke_Ellbogenbeuge')">
+       onclick="newTick('linke Ellbogenbeuge')">
       <title
          id="title979">linke Ellbogenbeuge</title>
     </path>
     <path
        style="opacity:1;fill:#ffccaa;fill-opacity:1;stroke:none;stroke-width:7.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 632.12776,1320.7036 c 32.71691,-0.9077 68.28485,2.4612 115.3858,23.1296 7.45688,-41.1294 17.95723,-81.9347 20.66086,-122.1135 3.89973,-26.3215 5.98972,-51.3718 11.44852,-75.6548 -26.76766,-7.8393 -48.99266,-18.5178 -67.47075,-31.5381 -12.4668,39.8766 -33.95875,79.7533 -52.02399,119.6299 -14.92947,31.9579 -22.30926,59.7214 -28.00044,86.5469 z"
-       id="linker_Unterarm"
+       id="linker Unterarm"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccccc"
        onmouseover="this.style.opacity=1"
        onmouseout="this.style.opacity=0"
-       onclick="newTick('linker_Unterarm')"
+       onclick="newTick('linker Unterarm')"
        inkscape:label="#path981">
       <title
          id="title983">linker Unterarm</title>
@@ -408,12 +408,12 @@ mySvg = `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
     <path
        style="opacity:1;fill:#fffd6d;fill-opacity:1;stroke:none;stroke-width:7.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 714.86216,1104.6389 c 13.99967,13.485 36.96566,22.4916 68.0127,32.2705 30.18233,-42.232 95.34441,-99.0776 81.01778,-108.815 -1.35523,-8.5725 -21.33897,-0.2101 -33.24705,0.8109 0.81169,-29.12534 6.15593,-60.51696 1.21635,-86.76667 -1.82698,-15.41567 -9.00318,-40.01386 -31.2198,-44.59966 -17.60119,-5.66097 -31.64273,22.94956 -43.78875,43.78876 0.44565,-16.54424 0.18383,-29.72802 -3.64913,-25.94888 -6.75199,0.21759 -18.40341,13.43034 -31.21972,105.41745 -4.82885,30.4023 -4.74825,55.8951 -7.12238,83.8426 z"
-       id="linke_Hand"
+       id="linke Hand"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccccccccc"
        inkscape:label="#path985"
        onmouseover="this.style.opacity=1"
-       onclick="newTick('linke_Hand')"
+       onclick="newTick('linke Hand')"
        onmouseout="this.style.opacity=0">
       <title
          id="title987">linke Hand</title>
@@ -422,10 +422,10 @@ mySvg = `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
        style="opacity:1;fill:#ff8080;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 25.210938,91.724609 c -1.66016,-0.02057 -3.387838,0.181399 -5.457032,0.455079 l -0.773437,3.265624 c 1.567695,1.07332 3.618938,2.001554 5.644531,2.9375 3.248864,1.512495 6.119458,2.060528 9.339844,1.912108 l 0.833984,-5.423826 c -2.354792,-1.620227 -5.625585,-2.928782 -7.939453,-3.046875 -0.548463,-0.06182 -1.095052,-0.09275 -1.648437,-0.09961 z"
        transform="matrix(7.5,0,0,-7.5,-48.779288,2088.5161)"
-       id="rechte_Ellbogenbeuge"
+       id="rechte Ellbogenbeuge"
        inkscape:connector-curvature="0"
        onmouseover="this.style.opacity=1"
-       onclick="newTick('rechte_Ellbogenbeuge')"
+       onclick="newTick('rechte Ellbogenbeuge')"
        onmouseout="this.style.opacity=0">
       <title
          id="title1142">rechte Ellbogenbeuge</title>
@@ -433,22 +433,23 @@ mySvg = `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
     <path
        style="opacity:1;fill:#ffd5d5;fill-opacity:1;stroke:none;stroke-width:7.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 50.277172,1132.134 c 21.947274,-5.3298 41.621642,-7.9689 72.714878,-24.1255 13.64047,42.866 36.60235,85.7319 55.30998,128.5979 12.16042,29.3313 20.56508,58.6626 25.87166,87.9939 -37.12829,2.1283 -75.20882,14.4562 -113.466831,36.02 -8.436929,-33.7262 -14.591706,-73.1578 -20.804025,-112.4456 -5.323035,-38.8157 -5.037113,-78.2545 -19.625662,-116.0407 z"
-       id="path1128"
+       
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccccc"
        onmouseover="this.style.opacity=1"
-       onclick="newTick('TODO')"
+       onclick="newTick('x')"
+       id="rechter Unterarm"
 
        onmouseout="this.style.opacity=0" />
     <path
        style="opacity:1;fill:#f5d5ff;fill-opacity:1;stroke:none;stroke-width:7.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 45.428542,1123.1545 c -22.841047,-26.6776 -47.1929674,-50.3334 -68.523141,-80.0327 -19.989674,-24.9051 -1.474573,-18.3064 10.7339,-16.8676 12.13462161,5.4874 16.0086149,-1.4162 18.017617,-11.1173 1.5266787,-33.48963 -2.3312481,-76.20623 8.433779,-95.83834 5.120529,-33.36709 50.599796,-29.08399 51.752731,3.83351 6.592771,37.68299 7.806531,1.186 23.764794,0.4229 19.964448,29.476 18.147528,80.73333 27.221228,121.10013 -0.53619,19.2984 -0.75115,38.3424 3.73093,53.6264 -27.19752,14.1228 -53.77289,21.6508 -75.131838,24.873 z"
-       id="recht_Hand"
+       id="rechte Hand"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccccccccc"
        onmouseover="this.style.opacity=1"
        onmouseout="this.style.opacity=0"
-       onclick="newTick('rechte_Hand')"
+       onclick="newTick('rechte Hand')"
        inkscape:label="#path1134">
       <title
          id="title1136">rechte Hand</title>
@@ -456,12 +457,12 @@ mySvg = `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
     <path
        style="opacity:1;fill:#6600ff;fill-opacity:1;stroke:none;stroke-width:7.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 220.14045,1036.6702 c 88.4313,0.2561 165.70209,-20.424 187.66114,-44.86823 1.80771,-79.95823 -32.47931,-154.80544 -33.06424,-244.8758 -10.37077,-67.1976 -26.89604,-144.62095 -30.8469,-211.81855 -42.2822,14.65549 -87.46616,3.19523 -131.86523,-1.20112 5.45309,109.92122 4.60656,219.84245 5.91723,329.76367 -1.97143,60.37077 -0.33632,117.13501 2.198,173.00003"
-       id="rechter_Oberschenkel"
+       id="rechter Oberschenkel"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccccc"
        onmouseover="this.style.opacity=1"
        onmouseout="this.style.opacity=0"
-       onclick="newTick('rechter_Oberschenkel')"
+       onclick="newTick('rechter Oberschenkel')"
        inkscape:label="#path864">
       <title
          id="title866">rechter Oberschenkel</title>
@@ -469,12 +470,12 @@ mySvg = `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
     <path
        style="opacity:1;fill:#8080ff;fill-opacity:1;stroke:none;stroke-width:7.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 417.32307,995.75692 c 78.31784,53.79828 139.82476,64.63538 196.66993,63.55908 5.31078,-63.9452 10.47115,-128.04081 11.07463,-196.69331 -3.10117,-81.93728 -11.41017,-149.98702 -8.11864,-248.9715 l 4.96882,-78.969 c -55.12205,8.29821 -95.62088,3.59799 -129.16993,-7.2798 -0.27019,78.61912 -18.07205,146.71924 -29.15093,218.85315 -14.15842,83.16713 -23.40293,166.33425 -46.27388,249.50138 z"
-       id="linker_Oberschenkel"
+       id="linker Oberschenkel"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccccccc"
        onmouseover="this.style.opacity=1"
        onmouseout="this.style.opacity=0"
-       onclick="newTick('linker_Oberschenkel')"
+       onclick="newTick('linker Oberschenkel')"
        inkscape:label="#path868">
       <title
          id="title872">linke Oberschenkel</title>
@@ -482,12 +483,12 @@ mySvg = `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
     <path
        style="opacity:1;fill:#2ad4ff;fill-opacity:1;stroke:none;stroke-width:7.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 210.63362,514.52665 c -1.90555,-20.72223 -2.59434,-40.90504 -1.59668,-61.25978 14.26141,-1.01148 30.73644,-6.70659 44.6749,-8.16324 65.02171,-7.90322 69.26035,-2.19605 86.78017,7.18104 l 2.3877,62.9004 c -35.82299,15.31379 -84.38946,6.00406 -132.24609,-0.65842 z"
-       id="rechtes_Knie"
+       id="rechtes Knie"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccccc"
        onmouseover="this.style.opacity=1"
        onmouseout="this.style.opacity=0"
-       onclick="newTick('rechtes_Knie_Hand')"
+       onclick="newTick('rechtes Knie')"
        inkscape:label="#path874">
       <title
          id="title876">rechtes Knie</title>
@@ -495,12 +496,12 @@ mySvg = `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
     <path
        style="opacity:1;fill:#55ffdd;fill-opacity:1;stroke:none;stroke-width:7.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 210.36995,434.09207 c 71.21812,-9.77318 104.9874,-13.79114 129.53604,-3.32677 l -5.36124,-256.4502 c -22.43825,-10.23755 -51.0161,-11.54477 -86.71875,-2.48865 2.99622,88.33255 -24.21375,168.37772 -37.45605,262.26562 z"
-       id="rechtes_Schinbein"
+       id="rechtes Schinbein"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccc"
        onmouseover="this.style.opacity=1"
        onmouseout="this.style.opacity=0"
-       onclick="newTick('rechtes_Schinbein_Hand')"
+       onclick="newTick('rechtes Schinbein')"
        inkscape:label="#path878">
       <title
          id="title880">rechtes Schinbein</title>
@@ -508,12 +509,12 @@ mySvg = `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
     <path
        style="opacity:1;fill:#00ff66;fill-opacity:1;stroke:none;stroke-width:7.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 246.4637,152.44847 c 39.7162,-6.11858 69.64597,-5.98472 87.59765,1.8018 -2.62298,-44.26096 -0.42243,-109.650505 -14.88931,-131.316145 -13.31423,-28.4765422 -44.11031,-11.702119 -72.05507,-2.47605 -16.79141,9.632248 -40.11401,21.189228 -25.75164,58.18875 11.91545,26.280005 22.73116,44.966565 25.09837,73.801645 z"
-       id="rechter_Fuss"
+       id="rechter Fuss"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccccc"
        onmouseover="this.style.opacity=1"
        onmouseout="this.style.opacity=0"
-       onclick="newTick('rechter_Fuss')"
+       onclick="newTick('rechter Fuss')"
        inkscape:label="#path882">
       <title
          id="title884">rechter Fuss</title>
@@ -521,12 +522,12 @@ mySvg = `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
     <path
        style="opacity:1;fill:#aaccff;stroke:none;stroke-width:7.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 493.26057,507.09915 c 22.07993,10.59334 49.60417,16.74527 87.83199,14.16533 13.73881,2.07914 28.0942,-3.85739 42.2168,-6.76755 1.31012,-24.49494 2.97035,-49.62007 2.24121,-70.44435 -20.84015,-14.9522 -39.51936,-19.09968 -56.9573,-17.04083 -24.2317,2.08754 -48.38254,4.0403 -73.85324,8.19285 z"
-       id="linkes_Knie"
+       id="linkes Knie"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccccc"
        onmouseover="this.style.opacity=1"
        onmouseout="this.style.opacity=0"
-       onclick="newTick('linkes_Knie')"
+       onclick="newTick('linkes Knie')"
        inkscape:label="#path983">
       <title
          id="title985">linkes Knie</title>
@@ -538,7 +539,7 @@ mySvg = `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
        id="linkes Schinbein"
        inkscape:connector-curvature="0"
        onmouseover="this.style.opacity=1"
-       onclick="newTick('linkes_Schinbein')"
+       onclick="newTick('linkes Schinbein')"
        onmouseout="this.style.opacity=0">
       <title
          id="title1037">linkes Schinbein</title>
@@ -551,7 +552,7 @@ mySvg = `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
        sodipodi:nodetypes="ccccccc"
        onmouseover="this.style.opacity=1"
        onmouseout="this.style.opacity=0"
-       onclick="newTick('linker_Fuss')"
+       onclick="newTick('linker Fuss')"
        inkscape:label="#path1033">
       <title
          id="title1035">linker Fuss</title>

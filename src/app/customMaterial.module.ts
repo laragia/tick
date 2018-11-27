@@ -1,16 +1,34 @@
-import { MatButtonModule, MatCheckboxModule, MatSlideToggleModule, MatFormFieldModule, MatNativeDateModule, MatDatepickerModule, MatInputModule, MatDialogModule, MatListModule, MatTabsModule, MatTableModule, MatPaginatorModule, MatSortModule,} from '@angular/material';
+import {
+  MatButtonModule,
+  MatCheckboxModule,
+  MatSlideToggleModule,
+  MatFormFieldModule,
+  MatNativeDateModule,
+  MatDatepickerModule,
+  MatInputModule,
+  MatDialogModule,
+  MatListModule,
+  MatTabsModule,
+  MatTableModule,
+  MatPaginatorModule,
+  MatSortModule,
+  MatSelectModule,
+} from '@angular/material';
 import { NgModule } from '@angular/core';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MAT_DATE_LOCALE } from '@angular/material';
 
 @NgModule({
-  imports: [MatButtonModule, MatCheckboxModule, MatSlideToggleModule, MatFormFieldModule,
+  imports: [MatSelectModule, MatButtonModule, MatCheckboxModule, MatSlideToggleModule, MatFormFieldModule,
     MatNativeDateModule, MatDatepickerModule, MatInputModule, BrowserAnimationsModule,
     MatDialogModule, MatListModule, MatTabsModule, MatTableModule, MatPaginatorModule,
-    MatSortModule],
-  exports: [MatButtonModule, MatCheckboxModule, MatSlideToggleModule, MatFormFieldModule,
+    MatSortModule, MatDatepickerModule, MatNativeDateModule],
+  exports: [MatSelectModule, MatButtonModule, MatCheckboxModule, MatSlideToggleModule, MatFormFieldModule,
     MatNativeDateModule, MatDatepickerModule, MatInputModule, BrowserAnimationsModule,
     MatDialogModule, MatListModule, MatTabsModule, MatTableModule, MatPaginatorModule,
-    MatSortModule],
+    MatSortModule, MatDatepickerModule, MatNativeDateModule],
+  providers: [
+    {provide: MAT_DATE_LOCALE, useValue: 'de-DE'},
+  ],
 })
 export class CustomMaterialModule { }
