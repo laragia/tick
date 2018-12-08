@@ -19,7 +19,7 @@
 
 
     <mat-form-field>
-      <mat-select placeholder="Kalender auswählen" #clientValue [(ngModel)]="selectedValue">
+      <mat-select *ngIf="true" placeholder="Kalender auswählen" #clientValue [(ngModel)]="selectedValue">
         <mat-option  *ngFor="let client of clients"   [value]="client.value">
           {{client.viewvalue}}
         </mat-option>
