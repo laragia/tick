@@ -21,6 +21,7 @@
     "@angular/material": "^7.0.3",
     "@angular/platform-browser": "^7.0.3",
     "@angular/platform-browser-dynamic": "^7.0.3",
+    "@angular/pwa": "^0.11.2",
     "@angular/router": "^7.0.3",
     "@trademe/ng-add-to-calendar": "^2.0.1",
     "core-js": "^2.5.4",

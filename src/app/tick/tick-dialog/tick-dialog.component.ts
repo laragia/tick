@@ -46,7 +46,7 @@ export class TickDialogComponent implements OnInit {
       // Event start date
       start: new Date('November 25, 2018 08:00'),
       // Event duration (IN MINUTES)
-      duration: 120,
+      duration: 5,
       // If an end time is set, this will take precedence over duration (optional)
       end: new Date('November 25, 2018 08:05'),
       // Event Address (optional)
@@ -73,13 +73,13 @@ export class TickDialogComponent implements OnInit {
   }
 
   save() {
-    console.log('add to calendar');
-    console.log('calendar: ' + this.selectedValue);
-    window.open(this._addToCalendarService.getHrefFor(this.selectedValue, this.newEvent), '_blank');
+    if (this.selectedValue !== undefined) {
+      this.newEvent.start = moment().add(1, 'days');
+      this.newEvent.end = moment().add(1.1, 'days');
+      window.open(this._addToCalendarService.getHrefFor(this.selectedValue, this.newEvent), '_blank');
+    }
+    this.dialogRef.close(this.tick);
   }
 
-  /*changeCal(cal) {
-    console.log(cal);
-  }*/
 
 }

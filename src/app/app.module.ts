@@ -1,5 +1,5 @@
 import {BrowserModule, DomSanitizer} from '@angular/platform-browser';
-import {NgModule, Pipe, PipeTransform} from '@angular/core';
+import {NgModule, NO_ERRORS_SCHEMA, Pipe, PipeTransform} from '@angular/core';
 import {CustomMaterialModule} from './customMaterial.module';
 import {AppComponent} from './app.component';
 import {TickComponent} from './tick/tick.component';
@@ -10,8 +10,16 @@ import {InlineSVGModule} from 'ng-inline-svg';
 import {HttpClientModule} from '@angular/common/http';
 import {PushNotificationsService} from './tick/notification.service';
 import {NgAddToCalendarModule} from '@trademe/ng-add-to-calendar';
+import { StartComponent } from './start/start.component';
+import { NavmenuComponent } from './navmenu/navmenu.component';
+import { HomeComponent } from './home/home.component';
+import {RouterModule, Routes} from '@angular/router';
 
-
+const appRoutes: Routes = [
+  {path: '', redirectTo: 'person', pathMatch: 'full'},
+  {path: 'start', component: StartComponent, data: {title: 'Start Component'}},
+  {path: 'tick', component: TickComponent, data: {title: 'Tick Component'}}
+];
 
 @Pipe({ name: 'safeHtml' })
 export class SafeHtmlPipe implements PipeTransform {
@@ -27,7 +35,10 @@ export class SafeHtmlPipe implements PipeTransform {
     TickComponent,
     TickDialogComponent,
     TickTableComponent,
-      SafeHtmlPipe
+      SafeHtmlPipe,
+      StartComponent,
+      NavmenuComponent,
+      HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -37,10 +48,19 @@ export class SafeHtmlPipe implements PipeTransform {
     NgAddToCalendarModule,
     BrowserModule,
     CustomMaterialModule,
-    FormsModule, HttpClientModule, InlineSVGModule.forRoot()
+    FormsModule, HttpClientModule, InlineSVGModule.forRoot(),
+    RouterModule.forRoot(
+      appRoutes,
+      {useHash: true}
+    )
   ],
   providers: [PushNotificationsService],
   bootstrap: [AppComponent],
-  entryComponents: [TickDialogComponent]
+  entryComponents: [TickDialogComponent],
+  schemas: [
+    NO_ERRORS_SCHEMA
+  ]
 })
-export class AppModule { }
+export class AppModule {
+  private static appRoutes: Routes;
+}

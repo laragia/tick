@@ -50,3 +50,8 @@ button{
   height: 14em;
   width: 14em;
 }
+
+div.svg{
+  margin-left: 60px;
+  margin-top: 20px;
+}
