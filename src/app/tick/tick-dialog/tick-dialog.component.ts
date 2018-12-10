@@ -74,8 +74,8 @@ export class TickDialogComponent implements OnInit {
 
   save() {
     if (this.selectedValue !== undefined) {
-      this.newEvent.start = moment().add(1, 'days');
-      this.newEvent.end = moment().add(1.1, 'days');
+      this.newEvent.start = moment().add(1, 'days').toDate();
+      this.newEvent.end = moment().add(1.1, 'days').toDate();
       window.open(this._addToCalendarService.getHrefFor(this.selectedValue, this.newEvent), '_blank');
     }
     this.dialogRef.close(this.tick);
