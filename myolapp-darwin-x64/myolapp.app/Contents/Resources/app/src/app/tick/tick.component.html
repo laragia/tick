@@ -1,0 +1,15 @@
+
+  <mat-tab-group>
+  <mat-tab class='tab1' label="Neue Zecke eintragen">
+    <div class="svg" [innerHtml]="mySvg | safeHtml" (click)="setTick($event)"> </div>
+    <!--button class='Button' mat-raised-button (click)="newTick()">neue Zecke eintragen</button-->
+  </mat-tab>
+  <mat-tab class='tab2' label="Liste aller Zecken">
+    <app-tick-table [inputTicks]=ticks></app-tick-table>
+  </mat-tab>
+
+</mat-tab-group>
+
+
+<!--TODO tabs > wie dass screen durch drei?? dass es sich anpasst?? evt mit css grid-->
+<!--TODO letztes angewähltes tab kommt auch bei neustart als erstes-->

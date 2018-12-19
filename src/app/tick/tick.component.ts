@@ -53,9 +53,9 @@ export class TickComponent implements OnInit {
           console.log('result: ' + result);
           if (result !== undefined) {
               console.log('tick: ' + JSON.stringify(result));
-              this.ticks.push(result);
+              // this.ticks.push(result);
+              this.ticks = [...this.ticks, result];
               localStorage.setItem('ticks', JSON.stringify(this.ticks));
-              // TODO aktualisieren?
           } else {
               console.log('CLOSE');
           }

@@ -1,5 +1,6 @@
 import {BrowserModule, DomSanitizer} from '@angular/platform-browser';
-import {NgModule, NO_ERRORS_SCHEMA, Pipe, PipeTransform} from '@angular/core';
+import {LOCALE_ID, NgModule, NO_ERRORS_SCHEMA, Pipe, PipeTransform} from '@angular/core';
+import localeDE from '@angular/common/locales/de';
 import {CustomMaterialModule} from './customMaterial.module';
 import {AppComponent} from './app.component';
 import {TickComponent} from './tick/tick.component';
@@ -14,6 +15,9 @@ import { StartComponent } from './start/start.component';
 import { NavmenuComponent } from './navmenu/navmenu.component';
 import { HomeComponent } from './home/home.component';
 import {RouterModule, Routes} from '@angular/router';
+import {registerLocaleData} from '@angular/common';
+
+registerLocaleData(localeDE, 'de');
 
 const appRoutes: Routes = [
   {path: '', redirectTo: 'person', pathMatch: 'full'},
@@ -54,7 +58,7 @@ export class SafeHtmlPipe implements PipeTransform {
       {useHash: true}
     )
   ],
-  providers: [PushNotificationsService],
+  providers: [PushNotificationsService, { provide: LOCALE_ID, useValue: 'de-DE' }],
   bootstrap: [AppComponent],
   entryComponents: [TickDialogComponent],
   schemas: [
