@@ -13,10 +13,8 @@ export interface Tick {
   bodyLocation: string;
 }
 
-// TODO evt interface importieren, Papa fragen!
 
 
-// TODO: replace this with real data from your application
 const EXAMPLE_DATA: Tick[] = [];
 
 /**
