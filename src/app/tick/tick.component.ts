@@ -69,7 +69,7 @@ export class TickComponent implements OnInit {
     const data: Array<any> = [];
     data.push({
       'title': 'Erinnerung',
-      'alertContent': 'Bitte kontrollieren sie ihre Zecken!'
+      'alertContent': 'Bitte kontrollieren sie ihre Zeckenbisse!'
     });
     this.notificationService.generateNotification('Zeckenkontrolle', 'Bitte kontrolliere deine Zecken!');
 
@@ -182,7 +182,7 @@ mySvg = `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
        style="stroke-width:1"
        d="m 334.06135,154.2483 c -2.15824,-0.4305 -4.18298,-1.41848 -6.35742,-1.7871 -2.22534,-0.43725 -4.32489,-1.4814 -6.60644,-1.7139 -2.32455,-0.50175 -4.57085,-1.41263 -6.95802,-1.64063 -2.91039,-0.543 -5.81769,-1.20045 -8.80371,-0.98145 -2.75226,0 -5.4948,-1.5e-4 -8.24706,0 -1.49898,1.5e-4 -2.99811,-9e-4 -4.49707,0 -1.53645,0 -3.07783,0.007 -4.61426,0.015 -2.27627,0.007 -4.5502,0.0225 -6.82617,0.06 -2.43796,0.045 -4.87926,0.11175 -7.30957,0.3225 -2.67399,0.23925 -5.33861,0.579 -7.9541,1.20113 -0.36848,0.0915 -3.13359,0.25875 -4.7754,0.1755 -2.66067,0.0375 -5.33781,0.0675 -7.96875,0.513 -2.78969,0.66525 -4.12485,1.30132 -6.67968,2.0361 -2.53496,-24.63068 -7.75526,-44.22788 -15.84961,-55.883778 -25.00001,-39 -15,-66.00585 30,-81.00585 61.78003,-19.959675 70.18372,-7.5312 73.44726,138.691428 z"
        id="path930"
-       
+
        inkscape:connector-curvature="0" />
     <path
        style="fill:#000403;fill-opacity:1;stroke-width:1"
@@ -430,7 +430,7 @@ mySvg = `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
     <path
        style="opacity:1;fill:#ffd5d5;fill-opacity:1;stroke:none;stroke-width:7.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 50.277172,1132.134 c 21.947274,-5.3298 41.621642,-7.9689 72.714878,-24.1255 13.64047,42.866 36.60235,85.7319 55.30998,128.5979 12.16042,29.3313 20.56508,58.6626 25.87166,87.9939 -37.12829,2.1283 -75.20882,14.4562 -113.466831,36.02 -8.436929,-33.7262 -14.591706,-73.1578 -20.804025,-112.4456 -5.323035,-38.8157 -5.037113,-78.2545 -19.625662,-116.0407 z"
-       
+
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccccc"
        onmouseover="this.style.opacity=1"

@@ -14,7 +14,7 @@ export class StartComponent implements OnInit {
   person: any = {};
   id: number;
   host = 'http://ol.zimaa.ch';
-  url = 'https://www.o-l.ch/cgi-bin/fixtures?&year=2019&link=';
+  // url = 'https://www.o-l.ch/cgi-bin/fixtures?&year=2019&link=';
   urlOV = 'https://transport.opendata.ch/v1/connections';
   public appleCalendarEventUrl: SafeUrl;
   public newEvent: ICalendarEvent;

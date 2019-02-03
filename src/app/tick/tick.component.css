@@ -3,6 +3,10 @@
   flex-direction: column;
 }
 
+.mat-primary {
+  height: 800px;
+}
+
 .example-container > * {
   width: 25%;
 }
@@ -55,3 +59,4 @@ div.svg{
   margin-left: 60px;
   margin-top: 20px;
 }
+
