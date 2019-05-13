@@ -16,13 +16,15 @@ import { NavmenuComponent } from './navmenu/navmenu.component';
 import { HomeComponent } from './home/home.component';
 import {RouterModule, Routes} from '@angular/router';
 import {registerLocaleData} from '@angular/common';
+import {ListComponent} from './list/list.component';
 
 registerLocaleData(localeDE, 'de');
 
 const appRoutes: Routes = [
   {path: '', redirectTo: 'person', pathMatch: 'full'},
   {path: 'start', component: StartComponent, data: {title: 'Start Component'}},
-  {path: 'tick', component: TickComponent, data: {title: 'Tick Component'}}
+  {path: 'tick', component: TickComponent, data: {title: 'Tick Component'}},
+  {path: 'list', component: ListComponent, data: {title: 'List Component'}}
 ];
 
 @Pipe({ name: 'safeHtml' })
@@ -39,6 +41,7 @@ export class SafeHtmlPipe implements PipeTransform {
     TickComponent,
     TickDialogComponent,
     TickTableComponent,
+    ListComponent,
       SafeHtmlPipe,
       StartComponent,
       NavmenuComponent,
