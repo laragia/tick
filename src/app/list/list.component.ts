@@ -7,7 +7,7 @@ import {MatListModule} from '@angular/material/list';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-  list: string[] = ['x', 'y', 'z', 'd', 'f'];
+  list: string[] = ['Kompass', 'Badge', 'Postenbeschreibungsmäppchen', 'OL-Schuhe', 'GA'];
 
   constructor() { }
 
