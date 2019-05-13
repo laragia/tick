@@ -15,7 +15,7 @@ import {
   MatSelectModule,
   MatToolbarModule,
   MatIconModule,
-  MatSidenavModule
+  MatSidenavModule,
 } from '@angular/material';
 import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
