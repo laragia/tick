@@ -1,13 +1,15 @@
-<h2>Packliste OL-Wettkampf</h2>
+<div>
+  <h2>Packliste OL-Wettkampf</h2>
 
-<mat-selection-list>
-  <mat-list-option *ngFor="let item of list">
-    {{item}}
-  </mat-list-option>
-</mat-selection-list>
+  <mat-selection-list>
+   <mat-list-option *ngFor="let item of list">
+      {{item}}
+    </mat-list-option>
+  </mat-selection-list>
 
-<p>
-  Options selected: {{item.selectedOptions.selected.length}}
-</p>
+  <p>
+    Options selected: {{list.selectedOptions.selected.length}}
+  </p>
 
-<button class="mat-raised-button mat-primary" (click)="newItem()">add new item to your list</button>
+  <button class="mat-raised-button mat-primary" (click)="newItem()">add new item to your list</button>
+</div>

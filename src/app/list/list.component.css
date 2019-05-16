@@ -1,10 +1,18 @@
 
 h2 {
   color: black;
+  margin-left: 18px;
   font-family:"Arial";
 }
+
 
 p {
   color: black;
   font-family:"Arial";
+  margin-left: 18px;
+}
+
+div {
+  margin-left: 25px;
+  margin-right: 1000px;
 }

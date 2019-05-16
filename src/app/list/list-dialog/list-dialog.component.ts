@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialogRef} from '@angular/material';
 
 @Component({
   selector: 'app-list-dialog',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListDialogComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dialogRef: MatDialogRef<ListDialogComponent>) { }
 
   ngOnInit() {
+  }
+  close() {
+    this.dialogRef.close();
   }
 
 }

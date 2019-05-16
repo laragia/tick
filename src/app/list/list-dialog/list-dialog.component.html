@@ -1,3 +1,11 @@
-<p>
-  list-dialog works!
-</p>
+<div class="dialog">
+  <mat-dialog-content>
+    <mat-form-field>
+      <input matInput placeholder="Input">
+    </mat-form-field>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button class="mat-raised-button" (click)="close()">cancel</button>
+    <button class="mat-raised-button mat-primary">save</button>
+  </mat-dialog-actions>
+</div>

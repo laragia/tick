@@ -17,6 +17,7 @@ import { HomeComponent } from './home/home.component';
 import {RouterModule, Routes} from '@angular/router';
 import {registerLocaleData} from '@angular/common';
 import {ListComponent} from './list/list.component';
+import {ListDialogComponent} from './list/list-dialog/list-dialog.component';
 
 registerLocaleData(localeDE, 'de');
 
@@ -40,6 +41,7 @@ export class SafeHtmlPipe implements PipeTransform {
     AppComponent,
     TickComponent,
     TickDialogComponent,
+    ListDialogComponent,
     TickTableComponent,
     ListComponent,
       SafeHtmlPipe,
@@ -63,7 +65,7 @@ export class SafeHtmlPipe implements PipeTransform {
   ],
   providers: [PushNotificationsService, { provide: LOCALE_ID, useValue: 'de-DE' }],
   bootstrap: [AppComponent],
-  entryComponents: [TickDialogComponent],
+  entryComponents: [TickDialogComponent, ListDialogComponent],
   schemas: [
     NO_ERRORS_SCHEMA
   ]
