@@ -1,11 +1,11 @@
 <div class="dialog">
   <mat-dialog-content>
     <mat-form-field>
-      <input matInput placeholder="Input">
+      <input matInput placeholder="new item" [(ngModel)]="item">
     </mat-form-field>
   </mat-dialog-content>
   <mat-dialog-actions>
     <button class="mat-raised-button" (click)="close()">cancel</button>
-    <button class="mat-raised-button mat-primary">save</button>
+    <button class="mat-raised-button mat-primary" (click)="save()">save</button>
   </mat-dialog-actions>
 </div>

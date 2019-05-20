@@ -9,11 +9,14 @@ import {ListDialogComponent} from './list-dialog/list-dialog.component';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-  list: string[] = ['Kompass', 'Badge', 'Postenbeschreibungsmäppchen', 'OL-Schuhe', 'GA'];
-
+  list: string[] = ['Kompass', 'Badge', 'Postenbeschreibungsmäppchen'];
   constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
+    this.list = JSON.parse(localStorage.getItem('list'));
+    if (this.list == null) {
+      this.list = [];
+    }
   }
 
   newItem(): void {
@@ -22,7 +25,15 @@ export class ListComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      console.log('result: ' + result);
+      if (result !== undefined) {
+        console.log('list: ' + JSON.stringify(result));
+        // this.ticks.push(result);
+        this.list = [...this.list, result];
+        localStorage.setItem('list', JSON.stringify(this.list));
+      } else {
+        console.log('CLOSE');
+      }
     });
   }
 
